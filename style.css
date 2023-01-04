@@ -1,19 +1,37 @@
 body {
     min-height: 100vh;
-    display: flex;
     font-size: 30px;
-    justify-content: center;
-    align-items: center;
     margin: 0;
+    cursor: crosshair;
+    background-color: rgb(231, 231, 231);
+}
+
+h1 {
+    text-align: center;
 }
 
 .container {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    min-width: 40vh;
+    border: 0.1em solid black;
+}
+
+.grid {
     display: grid;
     min-height: 66vh;
     min-width: 66vh;
-    border: 0.3em solid black;
+    border: 0.1em solid black;
+    background-color: whitesmoke;
 }
 
 .cell {
-    border: 0.1em solid black;
+    border: 0.001em solid black;
 }
+
