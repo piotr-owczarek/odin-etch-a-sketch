@@ -1,0 +1,19 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    min-height: 66vh;
+    min-width: 66vh;
+    border: 0.3em solid black;
+}
+
+.cell {
+    border: 0.1em solid black;
+}
