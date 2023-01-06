@@ -1,11 +1,19 @@
 const grid = document.querySelector('.grid');
 const colorPicker = document.getElementById('color-picker');
 const sizePicker = document.getElementById('size-picker');
-const clearButton = document.getElementById('clear-button');
+const clearButton = document.querySelector('.clear-button');
+const eraser = document.querySelector('.eraser');
+const body = document.querySelector('body');
+const BACKGROUND_COLOR = '#DCDCDC';
+const GRID_COLOR = '#F4F4F4';
+
+//init values
+body.style.cssText = `background-color: ${BACKGROUND_COLOR};`;
 let color = colorPicker.value;
 let size = 32;
 let mouseDown = false;
-grid.style.cssText = `grid-template-columns: repeat(${size}, 1fr);`;
+grid.style.cssText = `grid-template-columns: repeat(${size}, 1fr); background-color: ${GRID_COLOR};`;
+
 
 function changeColor() {
     if (!mouseDown) return;
@@ -29,7 +37,12 @@ colorPicker.addEventListener('change', () => {
 sizePicker.addEventListener('change', () => {
     size = sizePicker.value;
     createGrid();
-    grid.style.cssText = `grid-template-columns: repeat(${size}, 1fr);`;
+    grid.style.cssText = `grid-template-columns: repeat(${size}, 1fr); background-color: ${GRID_COLOR};`;
+})
+
+eraser.addEventListener('click', () => {
+    color = GRID_COLOR;
+    colorPicker.value = GRID_COLOR;
 })
 
 document.body.addEventListener('mousedown', () => mouseDown = true);

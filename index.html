@@ -11,16 +11,22 @@
     <h1>Etch-a-Sketch!</h1>
     <div class="container">
         <div class="menu">
-            <input id="color-picker" type="color" value="#d090b0" />
-            <input id="size-picker" type="range" value="32" min="1" max="64" oninput="this.nextElementSibling.value = this.value + 'x' + this.value"/>
+            <div class="menu-container">
+                <input id="color-picker" type="color" value="#d090b0" />
+                <p>Choose a color!</p>
+            </div>
+
+            <div class="menu-container">
+                <input id="size-picker" type="range" value="32" min="1" max="64" oninput="this.nextElementSibling.value = this.value + 'x' + this.value"/>
                 <output id="current-size">32x32</output>
-            <button id="clear-button">Clear!</button>
+            </div>
+
+            <img class="eraser" src="img/eraser.png">
+            <button type="reset" class="clear-button">Clear!</button>
         </div>
         <div class="grid"></div>
     </div>
     
 <body>
-
 </body>
-
 </html>
