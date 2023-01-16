@@ -10,7 +10,7 @@ const GRID_COLOR = '#F4F4F4';
 //init values
 body.style.cssText = `background-color: ${BACKGROUND_COLOR};`;
 let color = colorPicker.value;
-let size = 32;
+let size = 15;
 let mouseDown = false;
 grid.style.cssText = `grid-template-columns: repeat(${size}, 1fr); background-color: ${GRID_COLOR};`;
 
@@ -20,12 +20,17 @@ function changeColor() {
     this.style.cssText = `background: ${color};`;
 }
 
+function changeColorMouseDown() {
+    this.style.cssText = `background: ${color};`;
+}
+
 function createGrid(){
     grid.replaceChildren();
     for (let i = 0; i < size * size; i++) {
         const cell = document.createElement('div');
         cell.classList.add('cell');
         cell.addEventListener('mouseover', changeColor);
+        cell.addEventListener('mousedown', changeColorMouseDown);
         grid.appendChild(cell);
     }
 }
@@ -45,7 +50,7 @@ eraser.addEventListener('click', () => {
     colorPicker.value = GRID_COLOR;
 })
 
-document.body.addEventListener('mousedown', () => mouseDown = true);
-document.body.addEventListener('mouseup', () => mouseDown = false);
+grid.addEventListener('mousedown', () => mouseDown = true);
+grid.addEventListener('mouseup', () => mouseDown = false);
 clearButton.addEventListener('click', createGrid);
 createGrid();
