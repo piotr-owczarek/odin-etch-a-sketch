@@ -1,13 +1,13 @@
 # Etch-a-sketch
 
-Learning project displaying recipes.
+Learning project.
 
 
 ## Demo
 
-https://szejku11.github.io/odin-etch-a-sketch/
+https://piotr-owczarek.github.io/odin-etch-a-sketch/
 
 
 ## Authors
 
-- [@szejku11](https://github.com/szejku11)
+- [@piotr-owczarek](https://github.com/piotr-owczarek)
